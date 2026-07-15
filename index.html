@@ -22,56 +22,108 @@
         }
 
         .table-wrapper {
-            max-width: 950px;
+            max-width: 780px;
             width: 100%;
             background: rgba(235, 246, 255, 0.35);
             border-radius: 16px;
             box-shadow: 0 8px 32px rgba(150, 195, 235, 0.08);
-            padding: 28px 28px 20px;
+            padding: 20px 20px 16px;
             backdrop-filter: blur(4px);
             border: 1px solid rgba(200, 225, 250, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .table-wrapper.large {
+            max-width: 1100px;
+            padding: 32px 32px 24px;
+        }
+
+        .table-wrapper.large .custom-table {
+            font-size: 18px;
+        }
+
+        .table-wrapper.large .card-list li {
+            font-size: 17px;
+            padding: 16px 22px;
+        }
+
+        .table-wrapper.large .custom-table th .header-card {
+            font-size: 19px;
+            padding: 16px 24px;
+        }
+
+        .table-wrapper.large .custom-table th,
+        .table-wrapper.large .custom-table td {
+            padding: 18px 26px;
+        }
+
+        .table-controls {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 14px;
+        }
+
+        .btn-size {
+            background: rgba(200, 220, 245, 0.5);
+            border: 1px solid rgba(160, 195, 230, 0.3);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            color: #2c4a6e;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            backdrop-filter: blur(2px);
+        }
+
+        .btn-size:hover {
+            background: rgba(180, 210, 240, 0.6);
+            border-color: rgba(140, 180, 220, 0.5);
+            box-shadow: 0 2px 12px rgba(100, 160, 220, 0.10);
         }
 
         .custom-table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 16px;
-            line-height: 1.6;
+            font-size: 14px;
+            line-height: 1.5;
             background-color: rgba(240, 248, 255, 0.25);
             border: 1px solid rgba(200, 225, 248, 0.3);
             border-radius: 10px;
             overflow: hidden;
+            transition: all 0.3s ease;
         }
 
-        /* Шапка — тоже плашки */
         .custom-table th {
-            padding: 14px 22px;
+            padding: 10px 16px;
             text-align: left;
             border-bottom: 2px solid rgba(190, 218, 245, 0.35);
-            font-size: 17px;
+            font-size: 14px;
             letter-spacing: 0.2px;
             background: transparent;
         }
 
         .custom-table th .header-card {
             background: white;
-            border-radius: 12px;
-            padding: 14px 20px;
-            box-shadow: 0 2px 12px rgba(0, 20, 50, 0.04);
+            border-radius: 10px;
+            padding: 10px 16px;
+            box-shadow: 0 2px 8px rgba(0, 20, 50, 0.04);
             border: 1px solid #e4edf6;
             color: #2c4a6e;
             font-weight: 600;
             text-align: center;
             transition: all 0.2s ease;
+            font-size: 14px;
         }
 
         .custom-table th .header-card:hover {
-            box-shadow: 0 4px 20px rgba(0, 20, 50, 0.06);
+            box-shadow: 0 4px 16px rgba(0, 20, 50, 0.06);
             border-color: #b8d0e8;
         }
 
         .custom-table td {
-            padding: 16px 22px;
+            padding: 12px 16px;
             vertical-align: top;
             background-color: rgba(240, 248, 255, 0.12);
             color: #2a4a6a;
@@ -86,42 +138,61 @@
             border-right: 1px solid rgba(190, 218, 245, 0.20);
         }
 
-        /* Плашки-карточки для пунктов */
         .card-list {
             margin: 0;
             padding: 0;
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
         }
 
         .card-list li {
             background: white;
-            border-radius: 12px;
-            padding: 14px 18px;
-            box-shadow: 0 2px 12px rgba(0, 20, 50, 0.04);
+            border-radius: 10px;
+            padding: 10px 14px;
+            box-shadow: 0 2px 8px rgba(0, 20, 50, 0.04);
             border: 1px solid #e4edf6;
             color: #1f3853;
-            font-size: 15px;
+            font-size: 13px;
             line-height: 1.5;
             transition: all 0.2s ease;
         }
 
         .card-list li:hover {
-            box-shadow: 0 4px 20px rgba(0, 20, 50, 0.06);
+            box-shadow: 0 4px 16px rgba(0, 20, 50, 0.06);
             border-color: #b8d0e8;
         }
 
         @media (max-width: 600px) {
             .table-wrapper {
-                padding: 16px;
+                padding: 12px;
                 background: rgba(235, 246, 255, 0.20);
+                max-width: 100%;
+            }
+            .table-wrapper.large {
+                padding: 16px;
+                max-width: 100%;
+            }
+            .table-wrapper.large .custom-table {
+                font-size: 15px;
+            }
+            .table-wrapper.large .card-list li {
+                font-size: 14px;
+                padding: 12px 14px;
+            }
+            .table-wrapper.large .custom-table th .header-card {
+                font-size: 15px;
+                padding: 12px 16px;
+            }
+            .table-wrapper.large .custom-table th,
+            .table-wrapper.large .custom-table td {
+                padding: 12px 16px;
             }
             .custom-table th,
             .custom-table td {
-                padding: 12px 16px;
-                font-size: 15px;
+                padding: 10px 12px;
+                font-size: 13px;
                 display: block;
                 width: 100%;
                 border-right: none !important;
@@ -129,7 +200,7 @@
             }
             .custom-table tr {
                 display: block;
-                margin-bottom: 6px;
+                margin-bottom: 4px;
             }
             .custom-table td:first-child {
                 border-right: none;
@@ -141,30 +212,43 @@
                 content: "К расходам относятся";
                 font-weight: 600;
                 display: block;
-                margin-bottom: 10px;
+                margin-bottom: 8px;
                 color: #2c4a6e;
+                font-size: 14px;
             }
             .custom-table td:last-child::before {
                 content: "Не признаются расходами";
                 font-weight: 600;
                 display: block;
-                margin-bottom: 10px;
+                margin-bottom: 8px;
                 color: #2c4a6e;
+                font-size: 14px;
             }
             .card-list li {
-                font-size: 14px;
-                padding: 12px 14px;
+                font-size: 13px;
+                padding: 10px 12px;
             }
             .custom-table th .header-card {
-                padding: 10px 16px;
-                font-size: 15px;
+                padding: 8px 12px;
+                font-size: 13px;
+            }
+            .table-controls {
+                margin-bottom: 10px;
+            }
+            .btn-size {
+                font-size: 12px;
+                padding: 4px 14px;
             }
         }
     </style>
 </head>
 <body>
 
-<div class="table-wrapper">
+<div class="table-wrapper" id="tableWrapper">
+    <div class="table-controls">
+        <button class="btn-size" id="toggleSizeBtn">🔍 Увеличить</button>
+    </div>
+
     <table class="custom-table">
         <thead>
             <tr>
@@ -195,6 +279,18 @@
         </tbody>
     </table>
 </div>
+
+<script>
+    const wrapper = document.getElementById('tableWrapper');
+    const toggleBtn = document.getElementById('toggleSizeBtn');
+    let isLarge = false;
+
+    toggleBtn.addEventListener('click', function() {
+        isLarge = !isLarge;
+        wrapper.classList.toggle('large', isLarge);
+        toggleBtn.textContent = isLarge ? '🔍 Уменьшить' : '🔍 Увеличить';
+    });
+</script>
 
 </body>
 </html>
